@@ -10,6 +10,13 @@
 
 Welcome to the React/TypeScript Clock App! This dynamic web application allows users to interact with various clock and time-related features while enjoying a responsive and visually pleasing user interface.
 
+## The challenge
+The challenge is to build out this clock application and get it looking as close to the design as possible using following APIs to retrieve the necessary data:
+
+World Time API to set the time based on the visitor's IP adress. This API will also be used for additional data, like the day of the year shown in the expanded state.
+IP Geolocation API to set the city and country underneath the time
+Quotes API to generate random quotes.
+
 ##Features
 
 - Responsive Design: Experience an optimal layout on your device's screen, ensuring a seamless user experience across different screen sizes.
