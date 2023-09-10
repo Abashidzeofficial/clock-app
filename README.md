@@ -2,10 +2,13 @@
 ## Welcome! 👋
 
 
+
 ## React/TypeScript Clock App
+
 Welcome to the React/TypeScript Clock App! This dynamic web application allows users to interact with various clock and time-related features while enjoying a responsive and visually pleasing user interface.
 
 ##Features
+
 - Responsive Design: Experience an optimal layout on your device's screen, ensuring a seamless user experience across different screen sizes.
 
 - Interactive Elements: Hover over interactive elements to see their hover states, enhancing user interactivity and feedback.
@@ -17,4 +20,11 @@ Welcome to the React/TypeScript Clock App! This dynamic web application allows u
 - Dynamic Greetings and Backgrounds: The app greets users with the correct salutation based on the time of day they visit. It also displays background images that correspond to the time of day, enhancing the visual experience.
 
 - Random Programming Quotes: Click the refresh icon near the programming quote to generate random programming quotes, perfect for some developer inspiration!
+
+  ## Contributing
+ - Contributions are welcome! If you find any bugs or want to improve the app, feel free to open an issue or submit a pull request.
+   
+- ## Author
+- Giorgi abashidze
+  
 
