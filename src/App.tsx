@@ -41,6 +41,40 @@ function App() {
             <img src={uparrow} alt="uparrow" className="arrow-up"></img>
           </button>
         </div>
+        <div className="details-transform">
+          <div className='current-timezone'>
+            <span className="timezone-txt">
+              CURRENT TIMEZONE
+            </span>
+            <span className="timezone-txt2">
+              Europe/London
+            </span>
+          </div>
+          <div className='dofy'>
+            <span className="dofy-txt">
+              Day of the year
+            </span>
+            <span className="dofy-txt2">
+              295
+            </span>
+          </div>
+          <div className='dofw'>
+            <span className="dofw-txt">
+              Day of the week
+            </span>
+            <span className="dofw-txt2">
+              5
+            </span>
+          </div>
+          <div className='w-number'>
+            <span className="w-number-txt">
+              Week number
+            </span>
+            <span className="w-number-txt2">
+              42
+            </span>
+          </div>
+        </div>
       </div>
 
 
