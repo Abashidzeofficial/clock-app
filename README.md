@@ -1,6 +1,7 @@
 
 ## Welcome! 👋
 
+![cpub8v9o7uxugll9bwab](https://github.com/Abashidzeofficial/clock-app/assets/114133338/70548dbf-843f-4f4d-9a5f-8c2ee964b18f)
 
 
 ## React/TypeScript Clock App
