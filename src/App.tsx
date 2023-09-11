@@ -7,12 +7,17 @@ import './styles.css';
 import sun from './images/desktop/icon-sun.svg';
 import moon from './images/desktop/icon-moon.svg';
 import uparrow from './images/desktop/icon-arrow-up.svg';
+import downarrow from './images/desktop/arrowdown.png';
 
 function App() {
-  const [isMorning, setIsMorning] = useState(true); // 
+  const [isMorning, setIsMorning] = useState(true);
+  const [detailVisible, setDetailVisible] = useState(false); // dacherisas cvlis less/more icons steiti
 
   const hanldeChangeThem = () => {
     setIsMorning(!isMorning); // funqcia achens da aqrobs sun/moons
+  }
+  const handleDetailVisible = () => {
+    setDetailVisible(!detailVisible);
   }
   return (
     <div className={`container ${isMorning ? 'daytime-icon' : 'nighttime-icon'}`}>
@@ -36,12 +41,18 @@ function App() {
           <div className="location">
             <span className="geo-location">IN LONDON, UK</span>
           </div>
-          <button className="arrow">
-            <span className="less">LESS</span>
-            <img src={uparrow} alt="uparrow" className="arrow-up"></img>
+          <button className="arrow" onClick={handleDetailVisible}>
+            <span className="less">
+              {detailVisible ? 'MORE' : 'LESS'}
+            </span>
+            {detailVisible ? (   // dacherisas cvlis less/more icons
+              <img src={downarrow} alt="downarrow" className="arrow-up" />
+            ) : (
+              <img src={uparrow} alt="uparrow" className="arrow-up" />
+            )}
           </button>
         </div>
-        <div className="details-transform">
+        {detailVisible && (<div className="details-transform">
           <div className='current-timezone'>
             <span className="timezone-txt">
               CURRENT TIMEZONE
@@ -75,6 +86,7 @@ function App() {
             </span>
           </div>
         </div>
+        )}
       </div>
 
 

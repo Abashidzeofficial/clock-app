@@ -100,10 +100,12 @@
   letter-spacing: 3.75px;
   text-transform: uppercase;
 }
-.arrow-up {
+.arrow-up,
+.arrow-down {
   width: 32px;
   height: 32px;
-  flex-shrink: 0;
+  border-radius: 32px;
+  background-color: #303030;
 }
 .details-transform {
   width: 376px;
