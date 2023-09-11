@@ -11,7 +11,11 @@ import downarrow from './images/desktop/arrowdown.png';
 
 function App() {
   const [isMorning, setIsMorning] = useState(true);
+
   const [detailVisible, setDetailVisible] = useState(false); // dacherisas cvlis less/more icons steiti
+
+  const textColor = isMorning ? 'white' : 'black';  // roca evening/morning icvleba es cvlis textis fers 
+  const backgroundColor = isMorning ? 'black' : 'grey';
 
   const hanldeChangeThem = () => {
     setIsMorning(!isMorning); // funqcia achens da aqrobs sun/moons
@@ -52,12 +56,12 @@ function App() {
             )}
           </button>
         </div>
-        {detailVisible && (<div className="details-transform">
-          <div className='current-timezone'>
+        {detailVisible && (<div className="details-transform" style={{ background: backgroundColor }}   >
+          <div className='current-timezone' >
             <span className="timezone-txt">
               CURRENT TIMEZONE
             </span>
-            <span className="timezone-txt2">
+            <span className="timezone-txt2" style={{ color: textColor }}>
               Europe/London
             </span>
           </div>
@@ -65,7 +69,7 @@ function App() {
             <span className="dofy-txt">
               Day of the year
             </span>
-            <span className="dofy-txt2">
+            <span className="dofy-txt2" style={{ color: textColor }}>
               295
             </span>
           </div>
@@ -73,15 +77,15 @@ function App() {
             <span className="dofw-txt">
               Day of the week
             </span>
-            <span className="dofw-txt2">
+            <span className="dofw-txt2" style={{ color: textColor }}>
               5
             </span>
           </div>
           <div className='w-number'>
-            <span className="w-number-txt">
+            <span className="w-number-txt" >
               Week number
             </span>
-            <span className="w-number-txt2">
+            <span className="w-number-txt2" style={{ color: textColor }}>
               42
             </span>
           </div>
