@@ -15,7 +15,7 @@ function App() {
   const [detailVisible, setDetailVisible] = useState(false); // dacherisas cvlis less/more icons steiti
 
   const textColor = isMorning ? 'white' : 'black';  // roca evening/morning icvleba es cvlis textis fers 
-  const backgroundColor = isMorning ? 'black' : 'grey';
+  const backgroundColor = isMorning ? 'grey' : 'black';
 
   const hanldeChangeThem = () => {
     setIsMorning(!isMorning); // funqcia achens da aqrobs sun/moons
@@ -56,36 +56,37 @@ function App() {
             )}
           </button>
         </div>
-        {detailVisible && (<div className="details-transform" style={{ background: backgroundColor }}   >
+        {detailVisible && (<div className={`details-transform ${isMorning ? 'bg-grey' : 'bg-black'}`}  >
           <div className='current-timezone' >
-            <span className="timezone-txt">
+            <span className={`timezone-txt ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
               CURRENT TIMEZONE
             </span>
-            <span className="timezone-txt2" style={{ color: textColor }}>
+            <span className={`timezone-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
               Europe/London
             </span>
+
           </div>
           <div className='dofy'>
-            <span className="dofy-txt">
+            <span className={`dofy-txt ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
               Day of the year
             </span>
-            <span className="dofy-txt2" style={{ color: textColor }}>
+            <span className={`dofy-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
               295
             </span>
           </div>
           <div className='dofw'>
-            <span className="dofw-txt">
+            <span className={`dofw-txt ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
               Day of the week
             </span>
-            <span className="dofw-txt2" style={{ color: textColor }}>
+            <span className={`dofw-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
               5
             </span>
           </div>
           <div className='w-number'>
-            <span className="w-number-txt" >
+            <span className={`w-number-txt ${isMorning ? 'evening-txt' : 'morning-txt'}`} >
               Week number
             </span>
-            <span className="w-number-txt2" style={{ color: textColor }}>
+            <span className={`w-number-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
               42
             </span>
           </div>

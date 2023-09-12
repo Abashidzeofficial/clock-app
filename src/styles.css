@@ -1,15 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Space+Grotesk:wght@700&family=Space+Mono:wght@700&display=swap");
 :root {
-  --text-color-white: #fff;
-  --text-color-black: #030303;
+  --text-color-white: #f9faf9;
+  --text-color-black: #0b0b0b;
+  --background-color-black: #030303;
+  --background-color-grey: rgba(255, 255, 255, 0.75);
 }
 .evening-txt {
-  color: var(--background-color-white);
+  color: var(--text-color-black);
 }
 .morning-txt {
-  color: var(--color-black);
+  color: var(--text-color-white);
 }
-
+.bg-grey {
+  background-color: var(--background-color-grey);
+}
+.bg-black {
+  background-color: var(--background-color-black);
+}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -120,8 +127,8 @@
 .details-transform {
   width: 376px;
   height: 256px;
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20.387113571166992px);
+  /* background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20.387113571166992px); */
   flex-direction: column;
 }
 .details-transform {
@@ -133,7 +140,7 @@
 .dofy-txt,
 .dofw-txt,
 .w-number-txt {
-  color: #303030;
+  /* color: #303030; */
   font-family: Inter;
   font-size: 10px;
   font-style: normal;
@@ -146,7 +153,7 @@
 .dofy-txt2,
 .dofw-txt2,
 .w-number-txt2 {
-  /* color: #303030; */
+  /* color: #fcfbfb; */
   text-align: right;
   font-family: Inter;
   font-size: 20px;
