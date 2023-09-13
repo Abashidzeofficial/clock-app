@@ -191,6 +191,7 @@
 }
 @media only screen and (min-width: 765px) {
   .daytime-icon {
+    position: absolute;
     display: flex;
     width: 768px;
     height: 1024px;
@@ -202,8 +203,34 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+  }
+  .contrast {
+    position: absolute;
+    display: flex;
+  }
+  .time-zone {
+    display: flex;
+    margin-left: -350px;
+    margin-top: -133px;
     flex-direction: column;
-    margin-top: 100px;
+  }
+  .main-container {
+    position: absolute;
+    display: flex;
+    margin-top: 1441px;
+    margin-left: 1676px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .details-transform {
+    width: 768px;
+    height: 440px;
+    flex-direction: column;
+    margin-left: -454px;
+    margin-top: 21px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
   .sun-text,
   .moon-text {
@@ -216,13 +243,7 @@
     letter-spacing: 3.6px;
     text-transform: uppercase;
   }
-  .main-container {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    margin-top: -77px;
-    margin-left: 146px;
-  }
+
   .time-numbers {
     color: #fff;
     font-family: Inter;
@@ -256,26 +277,44 @@
     width: 146px;
     height: 56px;
   }
-  .details-transform {
-    position: absolute;
+  .timezone-txt2,
+  .dofy-txt2,
+  .dofw-txt2,
+  .w-number-txt2 {
+    /* color: #fcfbfb; */
+    text-align: right;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .dofw-txt2 {
     display: grid;
-    margin-left: -404px;
-    margin-top: 82px;
-    grid-template-columns: 1fr 2fr;
-    width: 772px;
-    height: 440px;
-    flex-shrink: 0;
+    justify-items: start;
   }
-  .contrast {
-    position: absolute;
-    display: flex;
-    margin-left: -120px;
-    margin-top: -502px;
+
+  .dofy-txt2 {
+    display: grid;
+    justify-items: start;
   }
-  .time-zone {
-    display: flex;
-    margin-left: -350px;
-    margin-top: -216px;
-    flex-direction: column;
+  .w-number {
+    display: grid;
+  }
+  .w-number-txt2 {
+    display: grid;
+    justify-items: start;
+  }
+  .current-timezone {
+    display: grid;
+
+    margin-left: 112px;
+  }
+  .dofy {
+    display: grid;
+  }
+  .dofw {
+    display: grid;
+    margin-left: -43px;
   }
 }

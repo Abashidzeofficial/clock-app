@@ -25,9 +25,11 @@ function App() {
   }
   return (
     <div className={`container ${isMorning ? 'daytime-icon' : 'nighttime-icon'}`}>
-      <img src={isMorning ? daytime : nighttime}
-        alt="daytime" className="daytime-icon"
-      />
+      <div className="daytime">
+        <img src={isMorning ? daytime : nighttime}
+          alt="daytime" className="daytime-icon"
+        />
+      </div>
       <div className="main-container">
         <div className="contrast">
           <button className="them" onClick={hanldeChangeThem}>
