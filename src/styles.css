@@ -292,18 +292,29 @@
   .dofw-txt2 {
     display: grid;
     justify-items: start;
+    margin-top: -185px;
   }
 
   .dofy-txt2 {
     display: grid;
     justify-items: start;
+    margin-top: -151px;
   }
   .w-number {
     display: grid;
   }
+  .timezone-txt {
+    display: flex;
+    margin-top: 36px;
+  }
+  .timezone-txt2 {
+    display: flex;
+    margin-top: -89px;
+  }
   .w-number-txt2 {
     display: grid;
     justify-items: start;
+    margin-top: -197px;
   }
   .current-timezone {
     display: grid;
@@ -312,6 +323,7 @@
   }
   .dofy {
     display: grid;
+    margin-top: 62px;
   }
   .dofw {
     display: grid;
