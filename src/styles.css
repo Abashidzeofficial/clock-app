@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Space+Grotesk:wght@700&family=Space+Mono:wght@700&display=swap");
+
 :root {
   --text-color-white: #f9faf9;
   --text-color-black: #0b0b0b;
@@ -23,10 +24,8 @@
   padding: 0;
 }
 .container {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
-  height: 100%;
-  width: 100%;
   justify-content: center;
   align-items: center;
   margin-top: 100px;
@@ -128,7 +127,7 @@
   width: 376px;
   height: 256px;
   /* background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(20.387113571166992px); */
+    backdrop-filter: blur(20.387113571166992px); */
   flex-direction: column;
 }
 .details-transform {
@@ -189,21 +188,35 @@
   gap: 200px;
   padding-top: 16px;
 }
+.daytime-tablet-icon {
+  display: none;
+}
+.daytime-desktop-icon {
+  display: none;
+}
+
 @media only screen and (min-width: 765px) {
   .daytime-icon {
-    position: absolute;
-    display: flex;
-    width: 768px;
-    height: 1024px;
+    display: none;
   }
-  .container {
-    position: absolute;
+  .daytime-desktop-icon {
+    display: none;
+  }
+  .daytime-tablet-icon {
     display: flex;
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    background: rgba(77, 77, 77, 0.75);
+    backdrop-filter: blur(20.387113571166992px);
+  }
+
+  .container {
+    /* position: absolute; */
+    display: flex;
+    margin-top: 0px;
     justify-content: center;
     align-items: center;
   }
+
   .contrast {
     position: absolute;
     display: flex;
@@ -217,11 +230,12 @@
   .main-container {
     position: absolute;
     display: flex;
-    margin-top: 1441px;
-    margin-left: 1676px;
+    margin-top: 1445px;
+    margin-left: 1222px;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
+    /* width: 100%; */
   }
   .details-transform {
     width: 768px;
@@ -328,5 +342,36 @@
   .dofw {
     display: grid;
     margin-left: -43px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .daytime-tablet-icon {
+    display: none;
+  }
+  .daytime-desktop-icon {
+    display: flex;
+    background-size: cover; /* Cover the entire container */
+    background-position: center center; /* Center the image horizontally and vertically */
+    background-attachment: fixed; /* Fix the background image, so it doesn't scroll with the content */
+  }
+  .details-transform {
+    width: 1621px;
+    height: 400px;
+    margin-top: 104px;
+  }
+  .main-container {
+    margin-top: 230px;
+    margin-left: 273px;
+  }
+  .time-zone {
+    margin-left: -539px;
+  }
+  .contrast {
+    margin-left: -1086px;
+    margin-top: -415px;
+  }
+  .arrow {
+    margin-top: -56px;
+    margin-left: 895px;
   }
 }

@@ -8,6 +8,10 @@ import sun from './images/desktop/icon-sun.svg';
 import moon from './images/desktop/icon-moon.svg';
 import uparrow from './images/desktop/icon-arrow-up.svg';
 import downarrow from './images/desktop/arrowdown.png';
+import desktopDayBg from './images/desktop/bg-image-daytime.jpg';
+import desktopNightBg from './images/desktop/bg-image-nighttime.jpg';
+import tabletDayBg from './images/tablet/bg-image-daytime.jpg';
+import tabletNightBg from './images/tablet/bg-image-nighttime.jpg';
 
 function App() {
   const [isMorning, setIsMorning] = useState(true);
@@ -29,6 +33,13 @@ function App() {
         <img src={isMorning ? daytime : nighttime}
           alt="daytime" className="daytime-icon"
         />
+        <img src={isMorning ? tabletDayBg : tabletNightBg}
+          alt="daytime" className="daytime-tablet-icon"
+        />
+        <img src={isMorning ? desktopDayBg : desktopNightBg}
+          alt="daytime" className="daytime-desktop-icon"
+        />
+
       </div>
       <div className="main-container">
         <div className="contrast">
