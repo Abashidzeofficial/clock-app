@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import daytime from './images/mobile/daytime.png';
 import nighttime from './images/mobile/bg-image-nighttime.jpg';
@@ -14,10 +14,50 @@ import tabletDayBg from './images/tablet/bg-image-daytime.jpg';
 import tabletNightBg from './images/tablet/bg-image-nighttime.jpg';
 
 function App() {
-  const [isMorning, setIsMorning] = useState(true);
 
-  const [detailVisible, setDetailVisible] = useState(false); // dacherisas cvlis less/more icons steiti
+  const [timezone, setTimezone] = useState();
+  const [dayOfYear, setDayOfYear] = useState();
+  const [dayOfWeek, setDayOfWeek] = useState();
+  const [weekNumber, setWeekNumber] = useState();
+  const [data, setData] = useState([]);
+  const [countryDate, setCountryDate] = useState([]);
+  const [countryCode, setCountryCode] = useState();
+  const [countryName, setCountryName] = useState();
+  useEffect(() => {
 
+    let countryApi = "https://ipbase.com/"
+    const fetchUsersData = async () => {
+      let response = await fetch(countryApi);
+      let countryDate = await response.json();
+      setCountryDate(countryDate)
+      setCountryCode(countryDate.country_code)
+      setCountryName(countryDate.country_name)
+    }
+    fetchUsersData()
+  }, [])
+
+  useEffect(() => {
+
+    //timezone api
+    let api = "http://worldtimeapi.org/api/ip";
+
+
+    const fetchUsers = async () => {
+      let response = await fetch(api);
+      let data = await response.json();
+      setData(data);
+      setTimezone(data.timezone)
+      setDayOfYear(data.day_of_year)
+      setDayOfWeek(data.day_of_week)
+      setWeekNumber(data.week_number)
+
+    }
+    fetchUsers()
+    console.log(fetchUsers);
+  }, []);
+
+  const [isMorning, setIsMorning] = useState<boolean>(true);
+  const [detailVisible, setDetailVisible] = useState<boolean>(false); // dacherisas cvlis less/more icons steiti
   const textColor = isMorning ? 'white' : 'black';  // roca evening/morning icvleba es cvlis textis fers 
   const backgroundColor = isMorning ? 'grey' : 'black';
 
@@ -56,7 +96,7 @@ function App() {
             <span className="time-pm-am">bts</span>
           </div>
           <div className="location">
-            <span className="geo-location">IN LONDON, UK</span>
+            <span className="geo-location">IN LONDON, UK {countryName}</span>
           </div>
           <button className="arrow" onClick={handleDetailVisible}>
             <span className="less">
@@ -75,7 +115,7 @@ function App() {
               CURRENT TIMEZONE
             </span>
             <span className={`timezone-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
-              Europe/London
+              {timezone}
             </span>
 
           </div>
@@ -84,7 +124,7 @@ function App() {
               Day of the year
             </span>
             <span className={`dofy-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
-              295
+              {dayOfYear}
             </span>
           </div>
           <div className='dofw'>
@@ -92,7 +132,7 @@ function App() {
               Day of the week
             </span>
             <span className={`dofw-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
-              5
+              {dayOfWeek}
             </span>
           </div>
           <div className='w-number'>
@@ -100,7 +140,7 @@ function App() {
               Week number
             </span>
             <span className={`w-number-txt2 ${isMorning ? 'evening-txt' : 'morning-txt'}`}>
-              42
+              {weekNumber}
             </span>
           </div>
         </div>

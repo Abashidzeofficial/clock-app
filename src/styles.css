@@ -205,8 +205,6 @@
   .daytime-tablet-icon {
     display: flex;
     position: absolute;
-    background: rgba(77, 77, 77, 0.75);
-    backdrop-filter: blur(20.387113571166992px);
   }
 
   .container {
