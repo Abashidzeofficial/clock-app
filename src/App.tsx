@@ -23,17 +23,23 @@ function App() {
   const [countryDate, setCountryDate] = useState([]);
   const [countryCode, setCountryCode] = useState();
   const [countryName, setCountryName] = useState();
+  const [time, setTime] = useState();
+
   useEffect(() => {
 
-    let countryApi = "https://ipbase.com/"
-    const fetchUsersData = async () => {
+
+    let countryApi = "https://jsonplaceholder.typicode.com/posts";
+    console.log(countryApi);
+
+    const fetchUsersIp = async () => {
       let response = await fetch(countryApi);
       let countryDate = await response.json();
       setCountryDate(countryDate)
       setCountryCode(countryDate.country_code)
       setCountryName(countryDate.country_name)
     }
-    fetchUsersData()
+    fetchUsersIp()
+    // console.log(fetchUsers);
   }, [])
 
   useEffect(() => {
@@ -41,6 +47,13 @@ function App() {
     //timezone api
     let api = "http://worldtimeapi.org/api/ip";
 
+    const datetimeString = "2023-09-15T22:32:35.607960+04:00";
+    const time = new Date(datetimeString);
+
+    // Get the time portion as a formatted string (HH:mm:ss)
+    const timeString = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+    console.log(timeString); // Output: "22:32:35"
 
     const fetchUsers = async () => {
       let response = await fetch(api);
@@ -50,6 +63,7 @@ function App() {
       setDayOfYear(data.day_of_year)
       setDayOfWeek(data.day_of_week)
       setWeekNumber(data.week_number)
+      setTime(data.datetime)
 
     }
     fetchUsers()
@@ -92,11 +106,11 @@ function App() {
         </div>
         <div className="time-zone" >
           <div className="time">
-            <span className="time-numbers">11:37</span>
+            <span className="time-numbers">11:37{time}</span>
             <span className="time-pm-am">bts</span>
           </div>
           <div className="location">
-            <span className="geo-location">IN LONDON, UK {countryName}</span>
+            <span className="geo-location">IN LONDON, UK {countryName} </span>
           </div>
           <button className="arrow" onClick={handleDetailVisible}>
             <span className="less">
