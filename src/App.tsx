@@ -12,6 +12,8 @@ import desktopDayBg from './images/desktop/bg-image-daytime.jpg';
 import desktopNightBg from './images/desktop/bg-image-nighttime.jpg';
 import tabletDayBg from './images/tablet/bg-image-daytime.jpg';
 import tabletNightBg from './images/tablet/bg-image-nighttime.jpg';
+import axios from 'axios';
+
 
 function App() {
 
@@ -24,11 +26,13 @@ function App() {
   const [countryCode, setCountryCode] = useState();
   const [countryName, setCountryName] = useState();
   const [time, setTime] = useState();
+  const [catFact, setCatFact] = useState("");
+
 
   useEffect(() => {
 
 
-    let countryApi = "https://jsonplaceholder.typicode.com/posts";
+    let countryApi = "https://ipbase.com/";
     console.log(countryApi);
 
     const fetchUsersIp = async () => {
@@ -42,18 +46,14 @@ function App() {
     // console.log(fetchUsers);
   }, [])
 
+
+
+
+
   useEffect(() => {
 
     //timezone api
     let api = "http://worldtimeapi.org/api/ip";
-
-    const datetimeString = "2023-09-15T22:32:35.607960+04:00";
-    const time = new Date(datetimeString);
-
-    // Get the time portion as a formatted string (HH:mm:ss)
-    const timeString = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-
-    console.log(timeString); // Output: "22:32:35"
 
     const fetchUsers = async () => {
       let response = await fetch(api);
@@ -63,8 +63,6 @@ function App() {
       setDayOfYear(data.day_of_year)
       setDayOfWeek(data.day_of_week)
       setWeekNumber(data.week_number)
-      setTime(data.datetime)
-
     }
     fetchUsers()
     console.log(fetchUsers);
@@ -110,7 +108,7 @@ function App() {
             <span className="time-pm-am">bts</span>
           </div>
           <div className="location">
-            <span className="geo-location">IN LONDON, UK {countryName} </span>
+            <span className="geo-location">IN LONDON, UK </span>
           </div>
           <button className="arrow" onClick={handleDetailVisible}>
             <span className="less">
